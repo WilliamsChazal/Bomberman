@@ -8,13 +8,20 @@
 }
 
 #player{
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background-image: url(assets/face.png);
     background-size: 100%;
     background-position:  center;
     position: absolute;
-    top: 50%;
-    left: 50%;
     z-index: 2;
+}
+
+#bomb{
+    width: 55px;
+    height: 55px;
+    background-image: url(assets/pokeball.png);
+    display: none;
+    position: absolute;
+    background-repeat: no-repeat;
 }

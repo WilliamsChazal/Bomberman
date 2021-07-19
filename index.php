@@ -10,7 +10,9 @@
 <body>
     <div id="gameContainer">
         <div id="player"></div>
+        <div id="bomb"></div>
     </div>
 <script src="main.js"></script>
+<script src="bomb.js"></script>
 </body>
 </html>
