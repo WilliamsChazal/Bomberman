@@ -18,10 +18,11 @@
 }
 
 #bomb{
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     background-image: url(assets/doomGuy/bomb-1.png);
     display: none;
     position: absolute;
     background-repeat: no-repeat;
+    background-size: cover;
 }
