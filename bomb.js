@@ -5,6 +5,8 @@ document.addEventListener('keydown', function(event) {
         bomb.style.display='block';
         bomb.style.top = player.offsetTop + "px";
         bomb.style.left = player.offsetLeft + "px";
-    }
-
+ 
+        setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-2.png')", 500);
+        setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-3.png')", 1000);
+      } 
 });
