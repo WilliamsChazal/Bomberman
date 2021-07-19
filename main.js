@@ -27,10 +27,12 @@ document.addEventListener('keydown', function(event) {
   if(player.offsetLeft <=672){
     playerWalk = playerWalk + 1;
     // Votre code ici
-    if(playerWalk % 3 == 1)
+    if(playerWalk % 2 == 1)
       this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-1.png')";
     else{
-      this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-2.png')", this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-3.png')";}
+      this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-3.png')";} 
+/*       this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-3.png')";
+      this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-1.png')";} */
 
   player.style.left = (player.offsetLeft + moveSize) + "px";
   }else {
