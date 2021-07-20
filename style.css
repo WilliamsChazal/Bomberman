@@ -8,8 +8,8 @@
 }
 
 #player{
-    width: 150px;
-    height:150px;
+    width: 175px;
+    height:175px;
     background-image: url(assets/doomGuy/face-1.png);
     background-size: 100%;
     background-position:  center;
@@ -25,4 +25,13 @@
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.enemies{
+    width: 150px;
+    height: 150px;
+    background-image: url(assets/doomGuy/demon-2.png);
+    position: absolute;
+    background-size: cover;
+    background-position: center;
 }
