@@ -20,3 +20,11 @@ function positionEnemies(enemy){
     enemy.style.top = x + 'px';
     enemy.style.left = y + 'px';
 }
+
+function mouvEnemies(){
+
+}
+
+function killDemon(){
+    let demonDead =[];
+}
