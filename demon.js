@@ -25,6 +25,16 @@ function mouvEnemies(){
 
 }
 
-function killDemon(){
-    let demonDead =[];
+colisionDetect();
+
+function colisionDetect(collision){
+    let player = document.getElementById('player');
+    let enemies = document.getElementsByClassName('enemies');
+    let enemiesSize = 150;
+    let playerSize = 175;
+
+    if (enemies.offsetTop + enemiesSize == player.offsetTop + playerSize && enemies.offsetLeft + enemiesSize == player.offsetLeft + playerSize) {
+        alert ('colision');
+        } else collision = false
+        console.log(collision);
 }
