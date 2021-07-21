@@ -24,7 +24,7 @@ function positionEnemies(enemy){
 function mouvEnemies(){
 
 }
-/*  colisionDetect();
+ colisionDetect();
 
 function colisionDetect(enemy){
     let player = document.getElementById('player');
@@ -37,9 +37,9 @@ function colisionDetect(enemy){
     else {
         collision = false}
     console.log(collision);       
-}  */
+} 
 
-function detectCollisions(){
+/* function detectCollisions(){
     let obj1 = document.getElementById('player');
     let obj2 = document.getElementsByClassName('enemies');
 
@@ -63,4 +63,4 @@ function detectCollisions(){
             }
         }
     }
-}
+} */
