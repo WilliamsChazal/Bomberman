@@ -39,6 +39,11 @@ function colisionDetect(enemy){
     console.log(collision);       
 } 
 
+/* if (enemies.offsetTop + enemiesSize < player.offsetTop + playerSize && enemies.offsetLeft + enemiesSize < player.offsetLeft + playerSize){ 
+    
+   https://developer.mozilla.org/fr/docs/Games/Techniques/2D_collision_detection 
+    */
+
 /* function detectCollisions(){
     let obj1 = document.getElementById('player');
     let obj2 = document.getElementsByClassName('enemies');

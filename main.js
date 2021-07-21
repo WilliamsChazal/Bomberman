@@ -1,7 +1,7 @@
 const player = document.getElementById('player');
 const game = document.getElementById('gameContainer');
 const moveSize = 24;
-var playerWalk = 0;
+const playerWalk = 0;
 
 document.addEventListener('keydown', function(event) {
     console.log(player.style.top);
