@@ -25,19 +25,19 @@ function positionEnemies(enemy){
 
 } */
 
-const doomGuy = document.getElementById('player')=={ witdh:175, height:175};
-const enemies = document.getElementsByClassName('enemies')=={ witdh:150, height:150};
-colisionDetect();
-function colisionDetect(){
-    if (doomGuy.offsetTop < enemies.offsetTop + enemies.width &&
-        doomGuy.offsetTop + player.width > enemies.offsetTop &&
-        doomGuy.offsetLeft < enemies.offsetLeft + enemies.height &&
-        doomGuy.height + player.offsetLeft > enemies.offsetLeft) {
-         // collision détectée !     
-        alert ('colision');} 
+const doomGuy = document.getElementById('player');
+const enemies = document.getElementsByClassName('enemies');
+colisionDetect(doomGuy.offsetLeft, doomGuy.offsetTop, enemies [0]);
+function colisionDetect(x, y, enemy){
+    if ((y < enemy.offsetTop + enemy.offsetHeight &&
+        y + doomGuy.offsetHeight > enemy.offsetTop) &&
+        (x < enemy.offsetLeft + enemy.offsetWidth &&
+        x + doomGuy.offsetWidth > enemy.offsetLeft)) {
+            console.log('boom'); 
+        return true;} 
     else {
-        collision = false}
-    console.log(enemies);       
+        return false}
+          
 }
 
 /*  
