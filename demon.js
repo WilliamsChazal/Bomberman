@@ -29,15 +29,15 @@ const doomGuy = document.getElementById('player')=={ witdh:175, height:175};
 const enemies = document.getElementsByClassName('enemies')=={ witdh:150, height:150};
 colisionDetect();
 function colisionDetect(){
-    if (player.offsetTop < enemies.offsetTop + enemies.width &&
-        player.offsetTop + player.width > enemies.offsetTop &&
-        player.offsetLeft < enemies.offsetLeft + enemies.height &&
-        player.height + player.offsetLeft > enemies.offsetLeft) {
+    if (doomGuy.offsetTop < enemies.offsetTop + enemies.width &&
+        doomGuy.offsetTop + player.width > enemies.offsetTop &&
+        doomGuy.offsetLeft < enemies.offsetLeft + enemies.height &&
+        doomGuy.height + player.offsetLeft > enemies.offsetLeft) {
          // collision détectée !     
         alert ('colision');} 
     else {
         collision = false}
-    console.log(collision);       
+    console.log(enemies);       
 }
 
 /*  
