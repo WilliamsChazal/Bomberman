@@ -21,7 +21,7 @@ document.addEventListener('keydown', function(event) {
     setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-3.png')", 1000);
     setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-4.png')", 1500);
     setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
-    setTimeout (()=>alert('dead'), 2500);
+    setTimeout (()=>alert("LES FORCES DE L\'ENFER ONT GAGNE"), 2500);
     
   } 
     
