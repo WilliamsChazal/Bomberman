@@ -2,6 +2,7 @@ const player = document.getElementById('player');
 const game = document.getElementById('gameContainer');
 const moveSize = 24;
 var playerWalk = 0;
+count = 0;
 
 document.addEventListener('keydown', function(event) {
     console.log(player.style.top);
@@ -21,7 +22,7 @@ document.addEventListener('keydown', function(event) {
     setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-3.png')", 1000);
     setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-4.png')", 1500);
     setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
-    setTimeout (()=>alert("LES FORCES DE L\'ENFER ONT GAGNE"), 2500);
+    setTimeout (()=>alert('dead'), 2500);
     
   } 
     
@@ -32,7 +33,7 @@ document.addEventListener('keydown', function(event) {
     if(playerWalk % 2 == 1)
       this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-1.png')";
     else{
-      this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-3.png')";} 
+      this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-2.png')";} 
 /*       this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-3.png')";
       this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-1.png')";} */
 
@@ -49,9 +50,12 @@ document.addEventListener('keydown', function(event) {
   if(player.offsetTop <= 696){
     playerWalk = playerWalk + 1;
     // Votre code ici
-    if(playerWalk % 2 == 1)
-    this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/face-1.png')";
-    else{this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/face-2.png')";}
+    count ++;
+    this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/face-" + count + ".png')";
+    if (count >= 4 ) count=0
+    /* else if (playerWalk % 2 == 0 && count == 1){ this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/face-2.png')";}
+    else if (playerWalk % 2 == 1 && count == 0){ this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/dos-1.png')";} */
+   
 
   player.style.top = (player.offsetTop + moveSize) + "px";
 /*   console.log (player.style.top); */
