@@ -25,7 +25,7 @@ function positionEnemies(enemy){
 
 } */
 
-const doomGuy = document.getElementById('player');
+/* const doomGuy = document.getElementById('player');
 const enemies = document.getElementsByClassName('enemies');
 colisionDetect(doomGuy.offsetLeft, doomGuy.offsetTop, enemies [0]);
 function colisionDetect(x, y, enemy){
@@ -38,7 +38,7 @@ function colisionDetect(x, y, enemy){
     else {
         return false}
           
-}
+} */
 
 /*  
     if (enemies.offsetTop + enemiesSize < player.offsetTop + playerSize && enemies.offsetLeft + enemiesSize < player.offsetLeft + playerSize){

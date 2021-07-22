@@ -8,7 +8,7 @@ document.addEventListener('keydown', function(event) {
     console.log(player.style.top);
     console.log(player.style.left);
   if (event.code == 'ArrowUp') {
-    if(player.offsetTop >=0 && !colisionDetect (player.offsetLeft, player.offsetTop - moveSize, enemies [0])){ 
+    if(player.offsetTop >=0 && !colisionDetect (player,player.offsetLeft, player.offsetTop - moveSize, enemies [0])){ 
         
       playerWalk = playerWalk + 1;
       if(playerWalk % 2 == 1)
@@ -85,9 +85,23 @@ document.addEventListener('keydown', function(event) {
     setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
   } 
 }
-colisionDetect(player.offsetLeft, player.offsetTop, enemies [0]);
+colisionDetect(player,player.offsetLeft, player.offsetTop, enemies [0]);
 });
 
  let postionTop = player.offsetTop;
 
 
+ const doomGuy = document.getElementById('player');
+ const enemies = document.getElementsByClassName('enemies');
+ /* colisionDetect(doomGuy.offsetLeft, doomGuy.offsetTop, enemies [0]); */
+ function colisionDetect(ref_obj, new_x, new_y, obj){
+     if ((new_y < obj.offsetTop + obj.offsetHeight &&
+         new_y + ref_obj.offsetHeight > obj.offsetTop) &&
+         (new_x < obj.offsetLeft + obj.offsetWidth &&
+         new_x + ref_obj.offsetWidth > obj.offsetLeft)) {
+             console.log('boom'); 
+         return true;} 
+     else {
+         return false}
+           
+ }
