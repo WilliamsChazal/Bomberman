@@ -22,7 +22,7 @@ function positionEnemies(enemy){
 }
 
 /* function mouvEnemies(){
-
+    
 } */
 
 /* const doomGuy = document.getElementById('player');
