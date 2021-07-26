@@ -4,6 +4,32 @@ const moveSize = 24;
 let playerWalk = 0;
 count = 0;
 
+// Génération aléatoire du décor
+addTileSet();
+function addTileSet(){
+    for (let i = 0; i < 50; i++) {
+        let div = document.createElement('div');
+        div.setAttribute('class', 'tileset')
+        div.setAttribute('id', 'tileset-'+i)
+        document.getElementById('gameContainer').appendChild(div);
+        positionTileSet(div);
+    }
+}
+function getRandomPosition(){
+    let randomX = Math.floor(Math.random()*24);
+    let randomY = Math.floor(Math.random()*24);
+    return[randomX,randomY];
+}
+function positionTileSet(tileset){
+    let randomPosition = getRandomPosition();
+    let x = randomPosition[0]*32;
+    let y = randomPosition[1]*32;
+    tileset.style.top = x + 'px';
+    tileset.style.left = y + 'px';
+}
+
+
+
 document.addEventListener('keydown', function(event) {
     console.log(player.style.top);
     console.log(player.style.left);
@@ -85,6 +111,15 @@ document.addEventListener('keydown', function(event) {
     setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
   } 
 }
+
+
+
+
+
+
+
+// 
+
 colisionDetect(player,player.offsetLeft, player.offsetTop, enemies [0]);
 });
 
