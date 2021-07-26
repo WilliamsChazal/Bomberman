@@ -8,8 +8,8 @@
 }
 
 #player{
-     width: 70px;
-    height:100px; 
+     width: 60px;
+    height:60px; 
     background-image: url(assets/doomGuy/face-1.png);
     background-size: 100%;
     background-position:  center;
@@ -18,8 +18,8 @@
 }
 
 #bomb{
-    width: 150px;
-    height: 150px;
+    width: 60px;
+    height: 60px;
     background-image: url(assets/doomGuy/bomb-1.png);
     display: none;
     position: absolute;

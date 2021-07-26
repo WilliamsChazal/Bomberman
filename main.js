@@ -3,6 +3,25 @@ const game = document.getElementById('gameContainer');
 const moveSize = 24;
 let playerWalk = 0;
 count = 0;
+let postionTop = player.offsetTop;
+
+
+const doomGuy = document.getElementById('player');
+const enemies = document.getElementsByClassName('enemies');
+
+//Fonction de collision
+function colisionDetect(ref_obj, new_x, new_y, obj){
+  if ((new_y < obj.offsetTop + obj.offsetHeight &&
+      new_y + ref_obj.offsetHeight > obj.offsetTop) &&
+      (new_x < obj.offsetLeft + obj.offsetWidth &&
+      new_x + ref_obj.offsetWidth > obj.offsetLeft)) {
+          console.log('boom'); 
+      return true;} 
+  else {
+      return false}
+        
+}
+
 
 // Génération aléatoire du décor
 addTileSet();
@@ -51,6 +70,19 @@ function addWall() {
 }
 
 
+//Fonction de la mort du doomGuy
+function doomGuyDead() {
+  player.style.backgroundImage="url('assets/doomGuy/mort-1.png')";
+    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-2.png')", 500);
+    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-3.png')", 1000);
+    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-4.png')", 1500);
+    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
+    setTimeout (()=>alert('dead'), 2500);
+}
+
+
+
+
 
 document.addEventListener('keydown', function(event) {
     console.log(player.style.top);
@@ -65,12 +97,7 @@ document.addEventListener('keydown', function(event) {
           {this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/dos-2.png')";}
       player.style.top = (player.offsetTop - moveSize) + "px";}
   else {
-    player.style.backgroundImage="url('assets/doomGuy/mort-1.png')";
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-2.png')", 500);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-3.png')", 1000);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-4.png')", 1500);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
-    setTimeout (()=>alert('dead'), 2500);
+  doomGuyDead();
     
   } 
     
@@ -86,13 +113,7 @@ document.addEventListener('keydown', function(event) {
       this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/droite-1.png')";} */
 
   player.style.left = (player.offsetLeft + moveSize) + "px";
-  }else {
-    player.style.backgroundImage="url('assets/doomGuy/mort-1.png')";
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-2.png')", 500);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-3.png')", 1000);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-4.png')", 1500);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
-  } 
+  }
   
 } else if (event.code == 'ArrowDown') {
   if(player.offsetTop <= 696){
@@ -108,13 +129,7 @@ document.addEventListener('keydown', function(event) {
   player.style.top = (player.offsetTop + moveSize) + "px";
 /*   console.log (player.style.top); */
   }
-  else {
-    player.style.backgroundImage="url('assets/doomGuy/mort-1.png')";
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-2.png')", 500);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-3.png')", 1000);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-4.png')", 1500);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
-  } 
+
 
 } else if (event.code == 'ArrowLeft') {
   if(player.offsetLeft >= -5){
@@ -125,40 +140,9 @@ document.addEventListener('keydown', function(event) {
     else{this.onkeydown = player.style.backgroundImage="url('assets/doomGuy/gauche-2.png')";}
   player.style.left = (player.offsetLeft - moveSize) + "px";
   }
-  else {
-    player.style.backgroundImage="url('assets/doomGuy/mort-1.png')";
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-2.png')", 500);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-3.png')", 1000);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-4.png')", 1500);
-    setTimeout (()=>player.style.backgroundImage="url('assets/doomGuy/mort-5.png')", 2000);
-  } 
+
 }
 
-
-
-
-
-
-
-// 
-
-colisionDetect(player,player.offsetLeft, player.offsetTop, enemies [0]);
 });
 
- let postionTop = player.offsetTop;
-
-
- const doomGuy = document.getElementById('player');
- const enemies = document.getElementsByClassName('enemies');
- /* colisionDetect(doomGuy.offsetLeft, doomGuy.offsetTop, enemies [0]); */
- function colisionDetect(ref_obj, new_x, new_y, obj){
-     if ((new_y < obj.offsetTop + obj.offsetHeight &&
-         new_y + ref_obj.offsetHeight > obj.offsetTop) &&
-         (new_x < obj.offsetLeft + obj.offsetWidth &&
-         new_x + ref_obj.offsetWidth > obj.offsetLeft)) {
-             console.log('boom'); 
-         return true;} 
-     else {
-         return false}
-           
- }
+ 

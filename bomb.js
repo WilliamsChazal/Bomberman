@@ -17,7 +17,6 @@ document.addEventListener('keydown', function(event) {
             if(colisionDetect (bomb,bomb.offsetLeft, bomb.offsetTop, (enemies[i]))){
                 (enemies[i]).style.backgroundImage = "url('assets/doomGuy/demon-1-3.png')";
                 setTimeout (()=>(enemies [i]).style.display ='none',3600);
-               console.log(enemy_+i);
             }
             
         }

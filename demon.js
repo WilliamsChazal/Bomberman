@@ -21,6 +21,14 @@ function positionEnemies(enemy){
     enemy.style.left = y + 'px';
 }
 
+/* for (let i = 0; i < enemies.length; i++) {
+    if(colisionDetect (player,player.offsetLeft, player.offsetTop, (enemies[i]))){
+       doomGuyDead();
+    }
+    
+} */
+
+
 /* function mouvEnemies(){
     
 } */
