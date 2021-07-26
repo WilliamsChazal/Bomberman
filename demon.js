@@ -21,19 +21,10 @@ function positionEnemies(enemy){
     enemy.style.left = y + 'px';
 }
 
-for (let i = 0; i < enemies.length; i++) {
-    if(colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop, (enemies[i]))){
-       doomGuyDead();
-       console.log('mort')
-    }
-   
-    
+function mouvEnemies(){
+    console.log(enemy_0.style.top)
+    console.log(enemy_0.style.left)
 }
-
-
-/* function mouvEnemies(){
-    
-} */
 
 /* const doomGuy = document.getElementById('doomGuy');
 const enemies = document.getElementsByClassName('enemies');
