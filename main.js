@@ -28,6 +28,28 @@ function positionTileSet(tileset){
     tileset.style.left = y + 'px';
 }
 
+addWall();
+function addWall() {
+  x = 0
+  ymin = 0
+  ymax = 700
+  while (x < game.offsetWidth) {
+    let div =document.createElement('div');
+    div.setAttribute('class', 'wall')
+    document.getElementById('gameContainer').appendChild(div);
+    div.style.top = x + 'px';
+    div.style.left = ymin + 'px';
+    
+   div =document.createElement('div');
+    div.setAttribute('class', 'wall')
+    document.getElementById('gameContainer').appendChild(div);
+    div.style.top = x + 'px';
+    div.style.left = game.offsetWidth - div.offsetWidth + 'px';
+    x = x+div.offsetWidth
+  }
+  
+}
+
 
 
 document.addEventListener('keydown', function(event) {

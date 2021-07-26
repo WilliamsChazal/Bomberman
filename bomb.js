@@ -13,7 +13,7 @@ document.addEventListener('keydown', function(event) {
         setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-3.png')", 2500);
         setTimeout (()=>bomb.style.backgroundImage= display='none', 3500);
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < enemies.length; i++) {
             if(colisionDetect (bomb,bomb.offsetLeft, bomb.offsetTop, (enemies[i]))){
                 (enemies[i]).style.backgroundImage = "url('assets/doomGuy/demon-1-3.png')";
                 setTimeout (()=>(enemies [i]).style.display ='none',3600);
