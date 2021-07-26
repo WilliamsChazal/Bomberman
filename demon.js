@@ -21,19 +21,21 @@ function positionEnemies(enemy){
     enemy.style.left = y + 'px';
 }
 
-/* for (let i = 0; i < enemies.length; i++) {
-    if(colisionDetect (player,player.offsetLeft, player.offsetTop, (enemies[i]))){
+for (let i = 0; i < enemies.length; i++) {
+    if(colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop, (enemies[i]))){
        doomGuyDead();
+       console.log('mort')
     }
+   
     
-} */
+}
 
 
 /* function mouvEnemies(){
     
 } */
 
-/* const doomGuy = document.getElementById('player');
+/* const doomGuy = document.getElementById('doomGuy');
 const enemies = document.getElementsByClassName('enemies');
 colisionDetect(doomGuy.offsetLeft, doomGuy.offsetTop, enemies [0]);
 function colisionDetect(x, y, enemy){
@@ -49,7 +51,7 @@ function colisionDetect(x, y, enemy){
 } */
 
 /*  
-    if (enemies.offsetTop + enemiesSize < player.offsetTop + playerSize && enemies.offsetLeft + enemiesSize < player.offsetLeft + playerSize){
+    if (enemies.offsetTop + enemiesSize < doomGuy.offsetTop + doomGuySize && enemies.offsetLeft + enemiesSize < doomGuy.offsetLeft + doomGuySize){
    https://developer.mozilla.org/fr/docs/Games/Techniques/2D_collision_detection 
     */
 
