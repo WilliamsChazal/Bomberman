@@ -7,7 +7,7 @@
 - [x] Destruction des ennemis
 - [ ] Bloquer le déplacement sur les cases occupées par les ennemis
 
-- [ ] Génération des éléments de décor
+- [x] Génération des éléments de décor
 - [ ] Bloquer le déplacement sur les cases occupées par les éléments du décor
 
 
