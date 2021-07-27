@@ -2,7 +2,7 @@ const doomGuy = document.getElementById('player');
 const enemies = document.getElementsByClassName('enemies');
 const tileset = document.getElementsByClassName('tileset');
 const game = document.getElementById('gameContainer');
-const moveSize = 24;
+const moveSize = 12;
 let doomGuyWalk = 0;
 count = 0;
 let postionTop = doomGuy.offsetTop;
@@ -36,7 +36,7 @@ function colisionDetectList(ref_obj, new_x, new_y, list) {
 // Génération aléatoire du décor
 addTileSet();
 function addTileSet(){
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 10; i++) {
         let div = document.createElement('div');
         div.setAttribute('class', 'tileset')
         div.setAttribute('id', 'tileset-'+i)
@@ -96,7 +96,7 @@ document.addEventListener('keydown', function(event) {
     console.log(doomGuy.style.left); */
   if (event.code == 'ArrowUp') {
 
-      if (colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop - moveSize, tileset)) {
+      if (!colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop - moveSize, tileset)) {
         if(doomGuy.offsetTop >=24){  
           doomGuyWalk = doomGuyWalk + 1;
           if(doomGuyWalk % 2 == 1)

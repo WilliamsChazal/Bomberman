@@ -19,3 +19,10 @@ Facultatif
 - [ ] Les ennemis lâchent des bonus en mourrant
 - [ ] Coder les bonus
 - [ ] Un ennemi spécial peut détruire le joueur en le touchant
+
+
+sur le principe oui, niveau code ca ne prend pas tout a fait cette forme
+
+divise la largeur de gameContainer par doomGuy.width, ca te donne le nombre de "cases"
+ensuite tu fais un random entre 0 et "nombre de case"
+et la coordonnées finale c'est ta valeur random * doomGuy.width
