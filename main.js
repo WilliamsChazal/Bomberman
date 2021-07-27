@@ -23,6 +23,15 @@ function colisionDetect(ref_obj, new_x, new_y, obj){
         
 }
 
+function colisionDetectList(ref_obj, new_x, new_y, list) {
+    for (let y = 0; y < list.length; y++){
+          if (colisionDetect (ref_obj,new_x, new_y, (list [y]))) {
+            console.log('mur');
+            return true;
+          }
+        } return false 
+}
+
 
 // Génération aléatoire du décor
 addTileSet();
@@ -86,22 +95,17 @@ document.addEventListener('keydown', function(event) {
 /*     console.log(doomGuy.style.top);
     console.log(doomGuy.style.left); */
   if (event.code == 'ArrowUp') {
-    // essais collision
-/*     for (let i = 0; i < enemies.length; i++)
-      if (colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop - moveSize, (enemies [i]))) {
-          doomGuyDead();}
-      else {for (let y = 0; y < tileset.length; y++)
-          if (colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop - moveSize, (tileset [y]))) {
-            console.log('mur');}}  */
 
-      // déplacement
-    if(doomGuy.offsetTop >=24){  
-      doomGuyWalk = doomGuyWalk + 1;
-      if(doomGuyWalk % 2 == 1)
-          this.onkeydown = doomGuy.style.backgroundImage="url('assets/doomGuy/dos-1.png')";
-      else
-          {this.onkeydown = doomGuy.style.backgroundImage="url('assets/doomGuy/dos-2.png')";}
-      doomGuy.style.top = (doomGuy.offsetTop - moveSize) + "px";}
+      if (colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop - moveSize, tileset)) {
+        if(doomGuy.offsetTop >=24){  
+          doomGuyWalk = doomGuyWalk + 1;
+          if(doomGuyWalk % 2 == 1)
+              this.onkeydown = doomGuy.style.backgroundImage="url('assets/doomGuy/dos-1.png')";
+          else
+              {this.onkeydown = doomGuy.style.backgroundImage="url('assets/doomGuy/dos-2.png')";}
+          doomGuy.style.top = (doomGuy.offsetTop - moveSize) + "px";}
+      }
+    
   } 
 
 
