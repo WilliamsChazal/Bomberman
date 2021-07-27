@@ -21,7 +21,7 @@ function positionEnemies(enemy){
     enemy.style.left = y + 'px';
 }
 
-setInterval(mouvEnemies, 1000)
+setInterval(mouvEnemies, 500)
 
 function mouvEnemies(){
     for (let i = 0; i < enemies.length; i++){
@@ -31,24 +31,24 @@ switch (random) {
     case 0: 
     if(enemies[i].offsetLeft <=720 ){
         enemies[i].style.top = enemies[i].offsetTop +40 +'px';
-        enemies[i].style.left = enemies[i].offsetLeft;
+        enemies[i].style.left = enemies[i].offsetLeft -40 +'px';
     }
         break;
     case 1: 
     if(enemies[i].offsetTop <=720 ){
         enemies[i].style.top = enemies[i].offsetTop +40 +'px';
-        enemies[i].style.left = enemies[i].offsetLeft;
+        enemies[i].style.left = enemies[i].offsetLeft -40 +'px';
     }
         break;
     case 2: 
     if( enemies[i].offsetLeft >=24 && enemies[i].offsetTop >=24 ){
-        enemies[i].style.top = enemies[i].offsetTop ;
+        enemies[i].style.top = enemies[i].offsetTop +40 +'px' ;
         enemies[i].style.left = enemies[i].offsetLeft -40 +'px';
     }  
         break;
     case 3: 
     if(enemies[i].offsetTop >=24 ){
-        enemies[i].style.top = enemies[i].offsetTop ;
+        enemies[i].style.top = enemies[i].offsetTop +40 +'px' ;
         enemies[i].style.left = enemies[i].offsetLeft -40 +'px';
     }   
         break;
