@@ -36,7 +36,7 @@ function colisionDetectList(ref_obj, new_x, new_y, list) {
 // Génération aléatoire du décor
 addTileSet();
 function addTileSet(){
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 25; i++) {
         let div = document.createElement('div');
         div.setAttribute('class', 'tileset')
         div.setAttribute('id', 'tileset-'+i)
