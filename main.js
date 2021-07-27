@@ -87,10 +87,10 @@ document.addEventListener('keydown', function(event) {
     console.log(doomGuy.style.left); */
   if (event.code == 'ArrowUp') {
     // essais collision
-    for (let i = 0; i < enemies.length; i++)
+/*     for (let i = 0; i < enemies.length; i++)
       if (colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop - moveSize, (enemies [i]))) {
           doomGuyDead();}
-/*       else {for (let y = 0; y < tileset.length; y++)
+      else {for (let y = 0; y < tileset.length; y++)
           if (colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop - moveSize, (tileset [y]))) {
             console.log('mur');}}  */
 
@@ -112,7 +112,7 @@ document.addEventListener('keydown', function(event) {
       doomGuyDead();} */
 
     // déplacement  
-    if(doomGuy.offsetLeft <=672){
+    if(doomGuy.offsetLeft <=720){
       doomGuyWalk = doomGuyWalk + 1;
       if(doomGuyWalk % 2 == 1)
         this.onkeydown = doomGuy.style.backgroundImage="url('assets/doomGuy/droite-1.png')";
@@ -124,9 +124,9 @@ document.addEventListener('keydown', function(event) {
 
   else if (event.code == 'ArrowDown') {
     // essais collision
-    for (let i = 0; i < enemies.length; i++)
+/*     for (let i = 0; i < enemies.length; i++)
     if (colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop - moveSize, (enemies [i]))) {
-      doomGuyDead();} 
+      doomGuyDead();}  */
 
     // déplacement    
     if(doomGuy.offsetTop <= 696){
