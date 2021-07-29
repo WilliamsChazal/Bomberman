@@ -36,7 +36,7 @@ function colisionDetectList(ref_obj, new_x, new_y, list) {
 // Génération aléatoire du décor
 addTileSet();
 function addTileSet(){
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 15; i++) {
         let div = document.createElement('div');
         div.setAttribute('class', 'tileset')
         div.setAttribute('id', 'tileset-'+i)
@@ -78,6 +78,28 @@ function addWall() {
   }
   
 }
+function addWall2() {
+  y = 0
+  xmin = 0
+  xmax = 700
+  while (y < game.offsetWidth) {
+    let div =document.createElement('div');
+    div.setAttribute('class', 'wall')
+    document.getElementById('gameContainer').appendChild(div);
+    div.style.top = y + 'px';
+    div.style.left = xmin + 'px';
+    
+   div =document.createElement('div');
+    div.setAttribute('class', 'wall')
+    document.getElementById('gameContainer').appendChild(div);
+    div.style.top = y + 'px';
+    div.style.left = game.offsetWidth - div.offsetWidth + 'px';
+    y= y+div.offsetWidth
+  }
+  
+}
+addWall();
+addWall2();
 
 
 //Fonction de la mort du doomGuy

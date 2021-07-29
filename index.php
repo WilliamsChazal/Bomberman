@@ -8,6 +8,7 @@
     <title>Bomberman</title>
 </head>
 <body>
+    
     <div id="gameContainer">
         <div id="player"></div>
         <div id="bomb"></div>
