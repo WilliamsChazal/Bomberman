@@ -11,14 +11,14 @@
 - [ ] Bloquer le déplacement sur les cases occupées par les éléments du décor
 
 
-- [ ] Déplacement des ennemis
+- [x] Déplacement des ennemis
 
 - [ ] Ecran de victoire
 
 Facultatif
 - [ ] Les ennemis lâchent des bonus en mourrant
 - [ ] Coder les bonus
-- [ ] Un ennemi spécial peut détruire le joueur en le touchant
+- [x] Un ennemi spécial peut détruire le joueur en le touchant
 
 
 sur le principe oui, niveau code ca ne prend pas tout a fait cette forme
