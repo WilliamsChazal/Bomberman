@@ -1,6 +1,6 @@
 addEnemies();
 function addEnemies(){
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 8; i++) {
         let div = document.createElement('div');
         div.setAttribute('class', 'enemies')
         div.setAttribute('id', 'enemy-'+i)
@@ -21,46 +21,64 @@ function positionEnemies(enemy){
     enemy.style.left = y + 'px';
 }
 
-setInterval(mouvEnemies, 500)
+setInterval(mouvEnemies, 100)
 
 function mouvEnemies(){
+
     for (let i = 0; i < enemies.length; i++){
         let random = Math.floor(Math.random()*24);
-        //console.log(random)
+        
 switch (random) {
     case 0: 
-    if(enemies[i].offsetLeft <=720 ){
+    if(enemies[i].offsetLeft <=696 ){
         enemies[i].style.top = enemies[i].offsetTop +40 +'px';
-        enemies[i].style.left = enemies[i].offsetLeft -40 +'px';
+        enemies[i].style.left = enemies[i].offsetLeft  +'px';
+        
     }
         break;
     case 1: 
-    if(enemies[i].offsetTop <=720 ){
-        enemies[i].style.top = enemies[i].offsetTop +40 +'px';
-        enemies[i].style.left = enemies[i].offsetLeft -40 +'px';
+    if(enemies[i].offsetTop <=696 ){
+        enemies[i].style.top = enemies[i].offsetTop  +'px';
+        enemies[i].style.left = enemies[i].offsetLeft +40 +'px';
     }
         break;
     case 2: 
-    if( enemies[i].offsetLeft >=24 && enemies[i].offsetTop >=24 ){
-        enemies[i].style.top = enemies[i].offsetTop +40 +'px' ;
+    if( enemies[i].offsetLeft >=80 && enemies[i].offsetTop >=24 ){
+        enemies[i].style.top = enemies[i].offsetTop  +'px' ;
         enemies[i].style.left = enemies[i].offsetLeft -40 +'px';
     }  
         break;
     case 3: 
-    if(enemies[i].offsetTop >=24 ){
-        enemies[i].style.top = enemies[i].offsetTop +40 +'px' ;
-        enemies[i].style.left = enemies[i].offsetLeft -40 +'px';
+    if(enemies[i].offsetTop >=80 ){
+        enemies[i].style.top = enemies[i].offsetTop -40 +'px' ;
+        enemies[i].style.left = enemies[i].offsetLeft  +'px';
     }   
         break;
     
     default:
-        break;
+        
 }
 
 
     }
     
-
+for (let i = 0; i < enemies.length; i++) {
+            if(colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop, (enemies[i]))){
+                doomGuyDead();
+            }
+            
+        }
+        for (let i = 0; i < enemies.length; i++) {
+            if(colisionDetect (bomb,bomb.offsetLeft, bomb.offsetTop, (enemies[i]))){
+                setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-1.png')", 1000);
+                setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-2.png')", 2000);
+                setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-3.png')", 2500);
+                setTimeout (()=>bomb.style.backgroundImage= display='none', 2700); 
+                (enemies[i]).style.backgroundImage = "url('assets/doomGuy/demon-1-3.png')";
+                setTimeout (()=>(enemies [i]).style.display ='none',500);
+            }
+            
+        }
 }
 
 /* const doomGuy = document.getElementById('doomGuy');
