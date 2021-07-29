@@ -15,13 +15,13 @@ function getRandomPosition(){
 }
 function positionEnemies(enemy){
     let randomPosition = getRandomPosition();
-    let x = randomPosition[0]*24;
-    let y = randomPosition[1]*24;
+    let x = randomPosition[0]*12;
+    let y = randomPosition[1]*12;
     enemy.style.top = x + 'px';
     enemy.style.left = y + 'px';
 }
 
-setInterval(mouvEnemies, 100)
+setInterval(mouvEnemies, 500)
 
 function mouvEnemies(){
 
