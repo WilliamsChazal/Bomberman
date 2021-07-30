@@ -1,3 +1,5 @@
+let monsterGuyWalk = 0;
+
 addEnemies();
 function addEnemies(){
     for (let i = 0; i < 8; i++) {
@@ -24,6 +26,7 @@ function positionEnemies(enemy){
 setInterval(mouvEnemies, 500)
 
 function mouvEnemies(){
+    
 
     for (let i = 0; i < enemies.length; i++){
         let random = Math.floor(Math.random()*24);
@@ -64,6 +67,7 @@ switch (random) {
     
 for (let i = 0; i < enemies.length; i++) {
             if(colisionDetect (doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop, (enemies[i]))){
+                enemies.backgroundImage="url('assets/doomGuy/demon-2.png')"
                 doomGuyDead();
             }
             
@@ -74,8 +78,8 @@ for (let i = 0; i < enemies.length; i++) {
                 setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-2.png')", 2000);
                 setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-3.png')", 2500);
                 setTimeout (()=>bomb.style.backgroundImage= display='none', 2700); 
-                (enemies[i]).style.backgroundImage = "url('assets/doomGuy/demon-1-3.png')";
-                setTimeout (()=>(enemies [i]).style.display ='none',500);
+                (enemies[i]).style.backgroundImage = "url('assets/doomGuy/demon-3.png')";
+                setTimeout (()=>(enemies [i]).style.display ='none',200);
             }
             
         }
