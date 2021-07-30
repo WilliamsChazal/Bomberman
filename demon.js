@@ -1,9 +1,9 @@
 let monsterGuyWalk = 0;
 
-addEnemies();
-function addEnemies(){
 
-    for (let i = 0; i < 3; i++) {
+function addEnemies(max){
+
+    for (let i = 0; i < max; i++) {
         let div = document.createElement('div');
         div.setAttribute('class', 'enemies')
         div.setAttribute('id', 'enemy-'+i)
@@ -31,7 +31,8 @@ function positionEnemies(enemy){
 setInterval(mouvEnemies, 500)
 
 function mouvEnemies(){
-    
+    let doomGuy = document.getElementById('player');
+    let enemies = document.getElementsByClassName('enemies');
 
     for (let i = 0; i < enemies.length; i++){
         let random = Math.floor(Math.random()*24);

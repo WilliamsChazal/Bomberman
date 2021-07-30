@@ -1,14 +1,23 @@
-const doomGuy = document.getElementById('player');
-let enemies = document.getElementsByClassName('enemies');
-const tileset = document.getElementsByClassName('tileset');
-const game = document.getElementById('gameContainer');
-const moveSize = 12;
+
+let tileset = document.getElementsByClassName('tileset');
+let game = document.getElementById('gameContainer');
+let moveSize = 12;
 let doomGuyWalk = 0;
 count = 0;
-let postionTop = doomGuy.offsetTop;
-let postionLeft = doomGuy.offsetLeft;
 
 
+function addPlayer(){
+      let div = document.createElement('div');
+      div.setAttribute('class', 'player')
+      div.setAttribute('id', 'player')
+      document.getElementById('gameContainer').appendChild(div);
+}
+function addBomb(){
+      let div = document.createElement('div');
+      div.setAttribute('class', 'bomb')
+      div.setAttribute('id', 'bomb')
+      document.getElementById('gameContainer').appendChild(div);
+}
 
 //Fonction de collision
 function colisionDetect(ref_obj, new_x, new_y, obj){
@@ -34,7 +43,7 @@ function colisionDetectList(ref_obj, new_x, new_y, list) {
 
 
 // Génération aléatoire du décor
-addTileSet();
+
 function addTileSet(){
   if (gameContainer.offsetLeft <=680 && gameContainer.offsetTop <= 680) {
     
@@ -65,7 +74,7 @@ function positionTileSet(tileset){
     tileset.style.left = y + 'px';
 }
 
-addWall();
+
 function addWall() {
   x = 0
   ymin = 0
@@ -87,12 +96,13 @@ function addWall() {
   
 }
 
-addWall();
+
 
 
 
 //Fonction de la mort du doomGuy
 function doomGuyDead() {
+  let doomGuy = document.getElementById('player');
   doomGuy.style.backgroundImage="url('assets/doomGuy/mort-1.png')";
     setTimeout (()=>doomGuy.style.backgroundImage="url('assets/doomGuy/mort-2.png')", 100);
     setTimeout (()=>doomGuy.style.backgroundImage="url('assets/doomGuy/mort-3.png')", 300);
@@ -111,6 +121,7 @@ function bombExplode() {
 
 //Fonction de déplacement du DoomGuy
 document.addEventListener('keydown', function(event) {
+  let doomGuy = document.getElementById('player');
 /*     console.log(doomGuy.style.top);
     console.log(doomGuy.style.left); */
   if (event.code == 'ArrowUp') {
@@ -150,8 +161,6 @@ document.addEventListener('keydown', function(event) {
       count ++;
       this.onkeydown = doomGuy.style.backgroundImage="url('assets/doomGuy/face-" + count + ".png')";
     if (count >= 4 ) count=0
-      /* else if (doomGuyWalk % 2 == 0 && count == 1){ this.onkeydown = doomGuy.style.backgroundImage="url('assets/doomGuy/face-2.png')";}
-      else if (doomGuyWalk % 2 == 1 && count == 0){ this.onkeydown = doomGuy.style.backgroundImage="url('assets/doomGuy/dos-1.png')";} */
     doomGuy.style.top = (doomGuy.offsetTop + moveSize) + "px";
   }
 }
@@ -172,4 +181,21 @@ document.addEventListener('keydown', function(event) {
 
 });
 
- 
+
+
+ function init() {
+   gameContainer.innerHTML = '';
+  tileset = document.getElementsByClassName('tileset');
+  game = document.getElementById('gameContainer');
+  moveSize = 12;
+  doomGuyWalk = 0;
+  count = 0;
+   addWall();
+   addTileSet();
+   addEnemies(5);
+   testEnd();
+   addPlayer();
+   addBomb();
+ }
+
+ init();

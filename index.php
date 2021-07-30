@@ -13,9 +13,9 @@
         <div id="player"></div>
         <div id="bomb"></div>
     </div>
-<script src="main.js"></script>
+
 <script src="demon.js"></script>
-<script src="mouvDemon.js"></script>
 <script src="bomb.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
