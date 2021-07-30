@@ -101,6 +101,14 @@ function doomGuyDead() {
     /* setTimeout (()=>alert('dead'), 2500); */
 }
 
+function bombExplode() {
+  setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-2.png')",500);
+  setTimeout (()=>bomb.style.backgroundImage="url('assets/doomGuy/bomb-3.png')", 650);
+  setTimeout (()=>bomb.style.backgroundImage= display='none', 750); 
+
+  
+}
+
 //Fonction de déplacement du DoomGuy
 document.addEventListener('keydown', function(event) {
 /*     console.log(doomGuy.style.top);
