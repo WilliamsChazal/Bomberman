@@ -1,6 +1,6 @@
-/* div{
+div{
     border: red solid 1px;
-} */
+}
 body{
     background-color: black;
 }
@@ -18,7 +18,7 @@ body{
 
 
 #player{
-     width: 40px;
+     width: 50px;
     height:60px; 
     background-image: url(assets/doomGuy/face-1.png);
     background-size: 100%;

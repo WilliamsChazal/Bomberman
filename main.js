@@ -1,5 +1,5 @@
 const doomGuy = document.getElementById('player');
-const enemies = document.getElementsByClassName('enemies');
+let enemies = document.getElementsByClassName('enemies');
 const tileset = document.getElementsByClassName('tileset');
 const game = document.getElementById('gameContainer');
 const moveSize = 12;
@@ -36,6 +36,9 @@ function colisionDetectList(ref_obj, new_x, new_y, list) {
 // Génération aléatoire du décor
 addTileSet();
 function addTileSet(){
+  if (gameContainer.offsetLeft <=680 && gameContainer.offsetTop <= 680) {
+    
+  }
     for (let i = 0; i < 25; i++) {
         let div = document.createElement('div');
         div.setAttribute('class', 'tileset')
@@ -47,7 +50,12 @@ function addTileSet(){
 function getRandomPosition(){
     let randomX = Math.floor(Math.random()*24);
     let randomY = Math.floor(Math.random()*24);
+    while (randomX < 2 || randomY <2){
+      randomX = Math.floor(Math.random()*24);
+      randomY = Math.floor(Math.random()*24);
+  }
     return[randomX,randomY];
+    
 }
 function positionTileSet(tileset){
     let randomPosition = getRandomPosition();
@@ -78,28 +86,9 @@ function addWall() {
   }
   
 }
-function addWall2() {
-  y = 0
-  xmin = 0
-  xmax = 700
-  while (y < game.offsetWidth) {
-    let div =document.createElement('div');
-    div.setAttribute('class', 'wall')
-    document.getElementById('gameContainer').appendChild(div);
-    div.style.top = y + 'px';
-    div.style.left = xmin + 'px';
-    
-   div =document.createElement('div');
-    div.setAttribute('class', 'wall')
-    document.getElementById('gameContainer').appendChild(div);
-    div.style.top = y + 'px';
-    div.style.left = game.offsetWidth - div.offsetWidth + 'px';
-    y= y+div.offsetWidth
-  }
-  
-}
+
 addWall();
-addWall2();
+
 
 
 //Fonction de la mort du doomGuy
@@ -118,7 +107,7 @@ document.addEventListener('keydown', function(event) {
     console.log(doomGuy.style.left); */
   if (event.code == 'ArrowUp') {
 
-      if (!colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop, tileset)) {
+      if (!colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop-moveSize, tileset)) {
         if(doomGuy.offsetTop >=24){  
           doomGuyWalk = doomGuyWalk + 1;
           if(doomGuyWalk % 2 == 1)
@@ -133,7 +122,7 @@ document.addEventListener('keydown', function(event) {
 
   else if (event.code == 'ArrowRight') {
     // déplacement
-    if (!colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop, tileset)){
+    if (!colisionDetectList(doomGuy,doomGuy.offsetLeft + moveSize, doomGuy.offsetTop, tileset)){
     if(doomGuy.offsetLeft <=720){
       doomGuyWalk = doomGuyWalk + 1;
       if(doomGuyWalk % 2 == 1)
@@ -147,7 +136,7 @@ document.addEventListener('keydown', function(event) {
 
   else if (event.code == 'ArrowDown') {
     // déplacement   
-    if (!colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop, tileset)){ 
+    if (!colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop + moveSize,tileset)){ 
     if(doomGuy.offsetTop <= 696){
       doomGuyWalk = doomGuyWalk + 1;
       count ++;
@@ -160,7 +149,7 @@ document.addEventListener('keydown', function(event) {
 }
 } 
   else if (event.code == 'ArrowLeft') {
-    if (!colisionDetectList(doomGuy,doomGuy.offsetLeft, doomGuy.offsetTop, -moveSize, tileset)){
+    if (!colisionDetectList(doomGuy,doomGuy.offsetLeft -moveSize, doomGuy.offsetTop, -moveSize, tileset)){
     // déplacement  
   if(doomGuy.offsetLeft >= -5){
     doomGuyWalk = doomGuyWalk + 1;

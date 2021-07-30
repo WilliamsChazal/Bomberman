@@ -19,8 +19,22 @@ document.addEventListener('keydown', function(event) {
                 setTimeout (()=>bomb.style.backgroundImage= display='none', 750); 
                 (enemies[i]).style.backgroundImage = "url('assets/doomGuy/demon-1-3.png')";
                 setTimeout (()=>(enemies [i]).style.display ='none',600);
-            }
-            
+
+                console.log(enemies)
+                 document.getElementById('gameContainer').removeChild((enemies[i]));
+                 enemies = document.getElementsByClassName('enemies');
+                
+            }            
         }
       } 
-});  
+}); 
+
+function testEnd() {
+    if (enemies.length == 0) {
+        alert('GG')
+    }
+    setTimeout (()=>testEnd(),1000)
+}
+testEnd();
+
+
